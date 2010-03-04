@@ -45,6 +45,13 @@ var Textcast = function( p_opts )
     };
 
     // ----------------------------------------------------------------
+    // deal with entities
+    // ----------------------------------------------------------------
+    function stripHtml(s) {
+    	return s.replace(/\&/g, '&amp;').replace(/\</g, '&lt;');
+    }
+    
+    // ----------------------------------------------------------------
     // the actual typer thing
     // ----------------------------------------------------------------
     var type_text = function() {
@@ -82,7 +89,7 @@ var Textcast = function( p_opts )
     // it, on newlines, into an array of lines
     // ----------------------------------------------------------------
     var set_text = function( data_id ) {
-    	return m_text = document.getElementById(data_id).value.split("\n");			
+    	return m_text = stripHtml(document.getElementById(data_id).value).split("\n");			
     };
 
     // -------------------
