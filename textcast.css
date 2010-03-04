@@ -1,0 +1,32 @@
+body {
+	font-family: Verdana, sans-serif;
+	font-size: 10pt;
+}
+a {
+	text-decoration: none;
+}
+#terminal {
+    background-color: #000000;
+    color: #14FC03;
+    border: 1px solid #111;
+		height: 375px;
+		font-family: "Andale Mono", "Courier New", courier, monospace;
+		font-size: 12px;
+		overflow: auto;
+}
+.cursor {
+	background-color: #0F0;
+	color: #0F0;
+}
+.input {
+	color: #0F0;
+}
+.output {
+	color: #ddd;
+}
+.comment {
+	color: #aaf;
+}
+.data {
+	display: none;
+}
