@@ -2,10 +2,10 @@ Textcast
 --------
 
 Textcast is some javascript code that will playback text. It came about because
-I was looking for a quick way to make some screen casts for the 
-<a href="http://github.com/mtvee/bgz">bgz</a> project and I wasted a whole
-morning trying to find something that worked, and failed so I built
-this. I just needed to record some terminal action.
+I was looking for a quick way to make some screen casts for my the 
+http://github.com/mtvee/bgz project and I wasted a whole
+morning trying to find some mac app that worked, and failed, so I built
+this. For the love of pete, I just needed to record some terminal action!!
 
 The code is pretty simple and reasonably well commented I think. Pull the
 files and look them over in a browser and your editor and you should be
