@@ -10,12 +10,15 @@ some terminal action!! Sheesh!
 
 The code is pretty simple and reasonably well commented I think. Pull the
 files and look them over in a browser and your editor and you should be
-able to suss it out.
+able to suss it out. 
+
+If you just want a look the bgz demo is running this 
+code and you can check it out here http://j2mfk.com/projects/bugz/.
 
 Basically you can do your thing in the terminal and when you are done,
 cut and paste it into the textarea in index.html and run it. 
 
-Feel free to let me know if you have any thoughts on it. Hope you find it
+Do let me know if you have any thoughts on this and I hope you find it
 useful!
 
 
