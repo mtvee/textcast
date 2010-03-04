@@ -4,9 +4,8 @@ Textcast
 Textcast is some javascript code that will playback text possibly emulating a
 session at the terminal. It came about because I was looking for a quick way
 to make some screen casts for the http://github.com/mtvee/bgz project and I
-wasted a whole morning trying to find some mac app that worked, and failed, so
-I built this. For the love of all that is good and decent, I just needed to
-record some terminal action!! Sheesh!
+wasted a whole morning trying to find a mac app that worked, and failed, so
+I built this. 
 
 The code is pretty simple and reasonably well commented I think. Pull the
 files and look them over in a browser and your editor and you should be able
@@ -16,7 +15,7 @@ If you just want a look, the bgz demo is running this code and you can check
 it out here http://j2mfk.com/projects/bugz/.
 
 Basically you can do your thing in the terminal and when you are done, cut and
-paste it into the textarea in index.html and run it.
+paste it into the textarea in index.html and throw it on the web.
 
 Do let me know if you have any thoughts on this and I hope you find it useful!
 
