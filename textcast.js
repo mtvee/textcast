@@ -16,8 +16,7 @@
 //       Web: http://github.com/mtvee/textcast
 //      Date: Mar 3, 2010
 //   Version: 0.2.0
-//   License: MIT (but really I dont care what you do except if you make it 
-//                 better shoot me your changes)
+//   License: MIT 
 // ----------------------------------------------------------------
 var Textcast = function( p_opts ) 
 {
