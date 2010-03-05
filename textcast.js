@@ -2,7 +2,7 @@
 // Textcast class
 //
 // This class types out text found in a hidden textarea like
-// an old school terminal would... kinda
+// an old school terminal would... kinda sorta
 //
 // Tested with: Safari 4, Firefox 3.5, Opera 10
 //
@@ -10,10 +10,14 @@
 //		<span id="writer"></span><b class="cursor" id="cursor">_</b>
 // </div>
 //
-//  Author: J. Knight <jim AT_GARBAGE j2mfk DOT_GARBAGE com>
-//     Web: http://j2mfk.com
-//    Date: Mar 3, 2010
-// Version: 0.1.0
+// ----------------------------------------------------------------// 
+// Copyright: 2010 &copy; J. Knight 
+//    Author: J. Knight <emptyvee AT_GARBAGE gmail DOT_GARBAGE com>
+//       Web: http://github.com/mtvee/textcast
+//      Date: Mar 3, 2010
+//   Version: 0.2.0
+//   License: MIT (but really I dont care what you do except if you make it 
+//                 better shoot me your changes)
 // ----------------------------------------------------------------
 var Textcast = function( p_opts ) 
 {
@@ -22,11 +26,21 @@ var Textcast = function( p_opts )
     // ============================
     // user cconfigurable vars
     var config = {
-    	speed: 			120,
-    	pause: 			1000,
-    	line_count: 25,
-    	writer_id: 	"writer",
-    	cursor_id: 	"cursor"
+    	speed: 		120,        // ms between typed chars
+    	pause: 		1000,       // ms at end of typed line
+    	line_count: 25,         // how many lines or psuedo screen has
+    	writer_id: 	"writer",   // html id of the writer span
+    	cursor_id: 	"cursor",   // html id of the cursor span
+    	style:      'term'      // style to use
+    }
+    
+    // put more styles here. Just an array of pairs with each pair
+    // being a [regexp,css style name]
+    // the last regex should match anything, default style
+    var styles = {
+        term : [[new RegExp(/^\$/),'input'], // regex, css style name
+                [new RegExp(/^\#/),'comment'],
+                [new RegExp(/^.?/),'output']]
     }
 
     // private vars
@@ -58,12 +72,11 @@ var Textcast = function( p_opts )
     	txt = '';
 		clearTimeout( m_timeout );
     	for( var i = Math.max(0,m_row-config.line_count); i < m_row; i++ ) {
-    		if( m_text[i].charAt(0) == '$' ) {
-    			txt += "<span class='input'>" + m_text[i] + "</span><br/>";
-    		} else if( m_text[i].charAt(0) == '#' ) {
-    				txt += "<span class='comment'>" + m_text[i] + "</span><br/>";
-    		} else {
-    			txt += "<span class='output'>" + m_text[i].replace(/ /g, '&nbsp;') + "</span><br/>";
+    		for( var s in styles[config.style] ) {
+    		    if( styles[config.style][s][0].test( m_text[i] )) {
+        			txt += "<span class='"+styles[config.style][s][1]+"'>" + m_text[i].replace(/ /g, '&nbsp;') + "</span><br/>";
+        			break;
+    		    }
     		}
     	}
     	if( m_row >= m_text.length) {
